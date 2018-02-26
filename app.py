@@ -9,7 +9,7 @@ app = Flask(__name__)
 def home():
     return render_template('yay.html')
 
-@app.route('/results')
+@app.route('/results', methods=["POST"])
 def results(search, typeq):
     col = mongod.init()
     res
