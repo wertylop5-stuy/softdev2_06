@@ -31,30 +31,32 @@ def init():
     return col
 
 def print_cursor(cursor):
+    s
     for d in cursor:
-            print d
+            s+= d
+    return s
 
 def find_party(party, col):
     cursor = col.find({
         "party": party
     })
-    print_cursor(cursor)
+    return print_cursor(cursor)
 
 def find_person(last, first, col):
     cursor = col.find({
         "person.lastname": last,
         "person.firstname": first
     })
-    print_cursor(cursor)
+    return print_cursor(cursor)
 
 def find_twitter(twitter_id, col):
     cursor = col.find({
         "person.twitterid": twitter_id
     })
-    print_cursor(cursor)
+    return print_cursor(cursor)
 
 def find_state(state_code, col):
-    print_cursor(
+    return print_cursor(
         col.find({
             "state": state_code
         })
