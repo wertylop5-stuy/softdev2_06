@@ -29,38 +29,34 @@ def init():
     for x in js['objects']:
         col.insert_one(x)
     return col
-
+'''
 def print_cursor(cursor):
     s
     for d in cursor:
             s+= d
     return s
-
+'''
 def find_party(party, col):
     cursor = col.find({
         "party": party
     })
-    return print_cursor(cursor)
+    return cursor
 
 def find_person(last, first, col):
     cursor = col.find({
         "person.lastname": last,
         "person.firstname": first
     })
-    return print_cursor(cursor)
+    return cursor
 
 def find_twitter(twitter_id, col):
     cursor = col.find({
         "person.twitterid": twitter_id
     })
-    return print_cursor(cursor)
+    return cursor
 
 def find_state(state_code, col):
-    return print_cursor(
-        col.find({
-            "state": state_code
-        })
-    )
+    return col.find({"state": state_code})
 
 
 #find_party("Republican")
